@@ -1,0 +1,1 @@
+export const DEFAULT_UNIVERSE_SIZE = 50;
