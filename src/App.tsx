@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div style={{ display: 'grid',  gridTemplateColumns: `repeat(${DEFAULT_UNIVERSE_SIZE}, 1fr)`, height: '100%', width: '100%' }}>
-      {state.map(row => 
-        row.map((cell, index) => <Cell key={index} value={cell} />)
+      {state.map((row, i) => 
+        row.map((cell, j) => <Cell key={`${i}_${j}`} value={cell} />)
       )}
     </div>
   );
