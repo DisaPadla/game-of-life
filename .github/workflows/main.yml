@@ -43,6 +43,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: npm ci, test, build
+        if: ${{ secrets.SUPERSECRET == 'some' }}
         run: |
           npm ci
           npm run test
