@@ -37,10 +37,9 @@ jobs:
           SUPERSECRET: ${{ secrets.SUPERSECRET }}
         run: echo "$SUPERSECRET"
         
-      - uses: actions/cache@v2
+      - uses: actions/setup-node@v2
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: ${{ matrix.node_version }}
 
       # Runs a set of commands using the runners shell
       - name: npm ci, test, build
