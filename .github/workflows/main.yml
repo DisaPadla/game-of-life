@@ -32,6 +32,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
+          
+      - name: Retrieve secret
+        env:
+          SUPERSECRET: ${{ secrets.SUPERSECRET }}
+        run: echo "$SUPERSECRET"
 
       # Runs a set of commands using the runners shell
       - name: npm ci, test, build
