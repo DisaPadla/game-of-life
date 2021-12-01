@@ -42,11 +42,14 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       # Runs a set of commands using the runners shell
-      - name: npm ci, test, build
+      - name: npm ci, test
         env:
           SUPERSECRET: ${{ secrets.SUPERSECRET }}
         if: ${{ env.SUPERSECRET == 'some' }}
         run: |
           npm ci
           npm run test
+      - name: npm build
+        if: ${{ success() }}
+        run: npm run build
       
