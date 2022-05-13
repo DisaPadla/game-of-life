@@ -10,8 +10,6 @@ on:
   pull_request:
     branches: [ main ]
   delete:
-    branches:
-      - DisaPadla-patch-1
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
