@@ -33,7 +33,7 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           script: |
-            console.log(github.event.inputs, context);
+            console.log(context);
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node_version }}
