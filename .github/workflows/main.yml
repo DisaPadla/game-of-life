@@ -6,9 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
   delete:
 
   # Allows you to run this workflow manually from the Actions tab
@@ -37,6 +35,11 @@ jobs:
             console.log(context);
       - uses: actions/github-script@v6
         if: ${{ github.event_name == 'workflow_dispatch' }}
+        with:
+          script: |
+            console.log(context);
+
+      - uses: actions/github-script@v6
         with:
           script: |
             console.log(context);
