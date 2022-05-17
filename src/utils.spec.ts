@@ -1,6 +1,6 @@
 
 import { calculateNextGeneration, Universe } from './utils';
-
+console.log('')
 const universes: Universe[] = [
     [
         [0, 0, 0, 0],
