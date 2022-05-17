@@ -34,7 +34,7 @@ jobs:
         if: ${{ github.event_name == 'delete' && github.event.ref_type == 'branch' }}
         with:
           script: |
-            console.log(context);
+            console.log(1111, context);
       - uses: actions/github-script@v6
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
